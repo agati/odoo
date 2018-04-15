@@ -60,6 +60,14 @@ def atualizaTelCliente(nome, valor):
         print("*************** fim do atualizaTelCliente() *********************************")
         return
 
+def contaClientes():
+    if 'res.partner' in odoo.env:
+        partner = odoo.env['res.partner']
+        partner_ids = partner.search([])
+        print("Total de clientes na lista vale:", len(partner_ids))
+
+
+
 
 
 # inicio
@@ -74,5 +82,15 @@ insereCliente('Carlos da Silva', 'assai@guarana.com.br', '47 99184-1100', 'Rua d
 
 # 2-Atualiza cliente
 atualizaTelCliente('José da Silva', '1111-1111')
+
+
+
+#3- Consulta para ler quantos clientes existem na base de dados
+contaClientes()
+
+
+
+
+
 
 quit()
