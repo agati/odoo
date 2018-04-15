@@ -68,6 +68,24 @@ def contaClientes():
 
 
 
+def listaDezPrimeirosClientes():
+    if 'res.partner' in odoo.env:
+        matriz_clientes=[]
+        partner = odoo.env['res.partner']
+        partner_ids = partner.search([])
+        #print("Total de clientes na lista vale:", len(partner_ids))
+        for linha in partner.browse(partner_ids):
+            #print(linha.name, linha.id, linha.phone)
+            matriz_clientes.append(linha.name)
+
+        matriz_clientes.sort()
+        for x in range(0,10):
+            print(matriz_clientes[x])
+
+
+        print("*************** fim do atualizaTelCliente() *********************************")
+        return
+
 
 
 # inicio
@@ -88,6 +106,9 @@ atualizaTelCliente('José da Silva', '1111-1111')
 #3- Consulta para ler quantos clientes existem na base de dados
 contaClientes()
 
+#4-Listar os 10 primeiros clientes por ordem alfabética
+
+listaDezPrimeirosClientes()
 
 
 
