@@ -11,7 +11,7 @@ def conectaBd():
 
     # faz login
     # odoo.login('chocotech', 'demo', 'demo')
-    odoo.login('procele', 'agati@procele.com.br', 'Unicef08@')
+    odoo.login('procele', 'agati@procele.com.br', '')
 
     # criando uma base de dados
     # odoo.db.create('admin', 'procele', demo=True, lang='pt_BR', admin_password='admin')
